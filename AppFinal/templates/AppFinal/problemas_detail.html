@@ -1,0 +1,29 @@
+
+
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas observando los detalles del error!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+    <p>Detalles: {{problemas.detalles}}</p>
+    <p>Fecha de Error: {{problemas.fechaError}}</p>
+    <p>Juego: {{problemas.juego}}</p>
+    <p>Plataforma: {{problemas.plataforma}}</p>
+
+        
+    <a href="{% url 'ProblemaLeer' %}"> Regresar </a>
+{% endblock %}

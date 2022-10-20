@@ -1,0 +1,32 @@
+
+    
+
+
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas a punto de eliminar un juego!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+
+    <form action=""> {% csrf_token %}
+
+    <p>¿Estás seguro que quieres eliminar este Juego?</p>
+
+        
+    <input type="submit" value="Confirmar">
+
+{% endblock %}

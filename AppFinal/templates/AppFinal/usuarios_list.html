@@ -1,0 +1,39 @@
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Esta Pagina mostrara las reseñas de los jugadores!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+
+{% for usuarios in object_list %}
+
+
+    <p>Nombre: {{usuarios.nombre}}</p>
+
+    <a href="{% url 'UsuarioDetalle' usuarios.id %}" > Ver Usuario </a>
+
+    <a href="{% url 'UsuarioEditar' usuarios.id %}" > Editar Usuario </a>
+
+    <a href="{% url 'UsuarioBorrar' usuarios.id %}" > Borrar Usuario </a>
+
+
+    {% endfor %}
+
+    <br>
+    
+    <a href="{% url 'UsuarioCrear' %} "> Crear Usuario</a>
+
+{% endblock %}

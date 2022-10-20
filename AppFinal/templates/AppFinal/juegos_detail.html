@@ -1,0 +1,35 @@
+
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas viendo los detalles de un Juego!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+
+
+    <p>Nombre: {{juegos.nombre}}</p>
+    <p>Fecha de Cracion: {{juegos.fechaCreacion}}</p>
+    <p>Distribuidor: {{juegos.distribuidor}}</p>
+    <p>desarrolladora: {{juegos.desarrolladora}}</p>
+    <p>Plataforma: {{juegos.plataforma}}</p>
+    <p>Puntaje: {{juegos.puntaje}}</p>
+    <p>Genero: {{juegos.genero}}</p>
+    <p>SubGenero: {{juegos.subGenero}}</p>
+        
+    <a href="{% url 'JuegoLeer' %}"> Regresar </a>
+
+
+{% endblock %}

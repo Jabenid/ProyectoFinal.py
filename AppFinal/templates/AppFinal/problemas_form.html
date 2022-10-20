@@ -1,0 +1,29 @@
+
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas poniendo un error que tuvo o tiene el juego seleccionado!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+
+    <form action=""> {% csrf_token %}
+
+        {{form.as_p}}
+
+        
+    <input type="submit" value="Enviar">
+
+{% endblock %}

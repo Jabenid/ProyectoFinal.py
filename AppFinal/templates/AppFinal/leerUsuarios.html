@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% for nombres in user %}
+    #################################################################
+    <p>Fecha de Nacimiento: {{nombres.fechaNacimiento}} </p>
+    <p>Nombre: {{nombres.nombre}} </p>
+    <p>Apellido: {{nombres.apellido}} </p>
+    <p>ID Jugador: {{nombres.IdJugador}} </p>
+    <p>Celular: {{nombres.celular}} </p>
+    <p>Pais: {{nombres.pais}} </p>
+    <p>Provincia: {{nombres.provincia}} </p>
+    <p>Email: {{nombres.email}} </p>
+    <p>Juego: {{nombres.juego}} </p>
+
+    <button>
+        <a href="{% url 'UsuariosEditar' nombres.nombre %}" > Editar Usuario </a>
+    </button>  
+
+    <button>
+        <a href="{% url 'UsuariosEliminar' nombres.nombre %}" > Eliminar Usuario </a>
+    </button>    
+
+    {% endfor %}
+    #################################################################
+    <br>
+    <a href="{% url 'UsuariosCrear' %}" > Crear Usuario </a>
+    
+</body>
+</html>

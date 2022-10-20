@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% for juegos in problem %}
+    #################################################################
+    <p>Detalles: {{juegos.detalles}} </p>
+    <p>Fecha de Error: {{juegos.fechaError}} </p>
+    <p>Juego: {{juegos.juego}} </p>
+    <p>Plataforma: {{juegos.plataforma}} </p>
+
+    <button>
+        <a href="{% url 'ProblemasEditar' juegos.juego %}" > Editar Problema </a>
+    </button>  
+
+    <button>
+        <a href="{% url 'ProblemasEliminar' juegos.juego %}" > Eliminar Problema </a>
+    </button>    
+
+    {% endfor %}
+    #################################################################
+    <br>
+    <a href="{% url 'ProblemasCrear' %}" > Crear Problema </a>
+
+</body>
+</html>

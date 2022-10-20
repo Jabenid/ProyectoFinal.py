@@ -1,0 +1,36 @@
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+{{mensaje}}
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+<form action = "/AppFinal/resultados/" method="GET">
+        
+
+    <input type="number" name="puntaje" id="puntaje">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+    
+<p>Estamos buscando el puntaje:  {{puntaje}} </p>
+
+{% for juegos in juegos %}
+
+
+    <p>Nombre: {{juegos.nombre}} ---- Puntaje: {{juegos.puntaje}} </p>
+
+
+{% endfor %}
+
+
+{% endblock %}

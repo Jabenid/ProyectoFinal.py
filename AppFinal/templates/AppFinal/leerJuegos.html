@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% for juegos in games %}
+    #################################################################
+    <p>Nombre: {{juegos.nombre}} </p>
+    <p>Fecha de Creacion: {{juegos.fechaCreacion}} </p>
+    <p>Distribuidor: {{juegos.distribuidor}} </p>
+    <p>Desarrolladora: {{juegos.desarrolladora}} </p>
+    <p>Plataforma: {{juegos.plataforma}} </p>
+    <p>Puntaje: {{juegos.puntaje}} </p>
+    <p>Genero: {{juegos.genero}} </p>
+    <p>Sub Genero: {{juegos.subGenero}} </p>
+    <button>
+        <a href="{% url 'JuegosEditar' juegos.nombre %}" > Editar Juego </a>
+    </button>
+
+    <button>
+        <a href="{% url 'JuegosEliminar' juegos.nombre %}" > Eliminar Juego </a>
+    </button>   
+
+    {% endfor %}
+    #################################################################
+    <br>
+    <a href="{% url 'JuegosCrear'%}" > Crear Juego </a>
+
+</body>
+</html>

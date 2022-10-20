@@ -1,0 +1,32 @@
+
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas observando los detalles de una reseña de un juego!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+    <p>Fecha de Nacimiento: {{usuarios.fechaNacimiento}}</p>
+    <p>Nombre: {{usuarios.nombre}}</p>
+    <p>Apellido: {{usuarios.apellido}}</p>
+    <p>ID de Jugador: {{usuarios.IdJugador}}</p>
+    <p>Celular: {{usuarios.celular}}</p>
+    <p>Pais: {{usuarios.pais}}</p>
+    <p>Provincia o Estado: {{usuarios.provincia}}</p>
+    <p>Email: {{usuarios.email}}</p>
+    <p>Juego: {{usuarios.juego}}</p>
+        
+    <a href="{% url 'UsuarioLeer' %}"> Regresar </a>
+{% endblock %}

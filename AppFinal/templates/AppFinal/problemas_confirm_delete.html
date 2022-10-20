@@ -1,0 +1,30 @@
+
+
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas por eliminar un error que tuvo un juego!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+
+    <form action=""> {% csrf_token %}
+
+    <p>¿Estás seguro que quieres eliminar este Problema?</p>
+
+        
+    <input type="submit" value="Confirmar">
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas Creando o editando una Reseña de un juego!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+    <form action=""> {% csrf_token %}
+
+        {{form.as_p}}
+
+        
+    <input type="submit" value="Enviar">
+{% endblock %}

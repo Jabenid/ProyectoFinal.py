@@ -1,0 +1,39 @@
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Esta Pagina mostrara los errores de los juegos!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+
+    {% for problemas in object_list %}
+
+    ------------------------------------------------------------------
+    <p>Nombre: {{problemas.juego}}</p>
+    ------------------------------------------------------------------
+    <a href="{% url 'ProblemaDetalle' problemas.id %}" > Ver Problema </a>
+    ------------------------------------------------------------------
+    <a href="{% url 'ProblemaEditar' problemas.id %}" > Editar Problema </a>
+    ------------------------------------------------------------------
+    <a href="{% url 'ProblemaBorrar' problemas.id %}" > Borrar Problema </a>
+    ------------------------------------------------------------------
+
+
+    {% endfor %}
+
+    <br>
+    
+    <a href="{% url 'ProblemaCrear' %} "> Crear Problema</a>
+{% endblock %}

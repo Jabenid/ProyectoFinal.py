@@ -1,0 +1,64 @@
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Esta pagina mostrara los Juegos.
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+<form action = "/AppFinal/resultados/" method="GET">
+        
+
+    <input type="number" name="puntaje" id="puntaje">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+    
+<p>Estamos buscando el puntaje:  {{puntaje}} </p>
+
+{% for juegos in juegos %}
+
+
+    <p>Nombre: {{juegos.nombre}} ---- Puntaje: {{juegos.puntaje}} </p>
+
+
+{% endfor %}
+
+{% endblock %}
+
+{% block relleno %}
+
+{% for juegos in object_list %}
+
+    <p>Nombre: {{juegos.nombre}}</p>
+
+    <a href="{% url 'JuegoDetalle' juegos.id %}" > Ver Juego </a>
+
+    <a href="{% url 'JuegoEditar' juegos.id %}" > Editar Juego </a>
+
+    <a href="{% url 'JuegoBorrar' juegos.id %}" > Borrar Juego </a>
+
+
+    {% endfor %}
+
+
+    <br>
+    
+    <a href="{% url 'JuegoCrear' %} "> Crear Juego</a>
+{% endblock %}
+
+
+
+
+
+    
+
+

@@ -1,0 +1,26 @@
+{% extends "AppFinal/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estas a punto de eliminar la reseña a un juego!
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+
+
+{% endblock %}
+
+{% block relleno %}
+    <form action=""> {% csrf_token %}
+
+    <p>¿Estás seguro que quieres eliminar este Usuario?</p>
+
+        
+    <input type="submit" value="Confirmar">
+{% endblock %}
